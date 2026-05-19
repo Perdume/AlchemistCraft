@@ -1,0 +1,8 @@
+# 소스코드는 여기 없음
+*.java
+*.gradle
+src/
+
+# OS
+.DS_Store
+Thumbs.db
