@@ -1,13 +1,13 @@
 # AlchemistCraft
 
-**Advanced Custom Recipe Plugin for Minecraft 1.13 – 1.21+**  
-Spigot · Paper · Purpur
+**Advanced Custom Recipe Plugin for Minecraft 1.21+**  
+Paper · Purpur · Spigot
 
 ---
 
 ## What is AlchemistCraft?
 
-AlchemistCraft is a premium-grade recipe management plugin that lets server administrators create, edit, and control every recipe — entirely through an in-game GUI, no config editing required.
+AlchemistCraft is a premium recipe management plugin that lets server administrators create, edit, and control every recipe — entirely through an in-game GUI, no config editing required.
 
 ---
 
@@ -57,7 +57,6 @@ AlchemistCraft is a premium-grade recipe management plugin that lets server admi
 - Full **in-game GUI editor** — create and edit recipes without touching any files
 - **Vanilla recipe control** — toggle any vanilla recipe on/off per-server
 - **Custom cook time & XP** — configure per-recipe for all furnace-type stations
-- **Import / Export** — share recipe packs as JSON files
 - **14 languages** — en, ko, ja, zh_CN, zh_TW, de, fr, es, pt_BR, ru, pl, nl, tr, vi
 - **Developer API** — programmatically add/remove/toggle recipes from other plugins
 - **Event API** — `RecipeAddEvent`, `RecipeRemoveEvent`, `RecipeToggleEvent`, `VanillaRecipeToggleEvent`
@@ -86,8 +85,6 @@ AlchemistCraft is a premium-grade recipe management plugin that lets server admi
 | `/ac recipe info <name>` | Show recipe details | `alchemistcraft.recipe.list` |
 | `/ac recipe enable <name>` | Enable a recipe | `alchemistcraft.recipe.add` |
 | `/ac recipe disable <name>` | Disable a recipe | `alchemistcraft.recipe.add` |
-| `/ac import <file>` | Import recipes from JSON | `alchemistcraft.import` |
-| `/ac export <file>` | Export recipes to JSON | `alchemistcraft.export` |
 | `/ac reload` | Reload all plugin data | `alchemistcraft.reload` |
 | `/ac debug` | Toggle debug mode | `alchemistcraft.debug` |
 | `/ac test [category]` | Run internal diagnostics | `alchemistcraft.test` |
@@ -113,14 +110,14 @@ recipe-defaults:
     cook-xp: 0.1
 ```
 
-Full reference → [Wiki: Configuration](wiki/Configuration.md)
+Full reference → [Wiki: Configuration](https://github.com/Perdume/AlchemistCraft/wiki/Configuration)
 
 ---
 
 ## Requirements
 
-- Java 17 or higher
-- Spigot / Paper / Purpur 1.13+
+- Java 21 or higher
+- Paper / Purpur / Spigot 1.21+
 
 ---
 
@@ -134,15 +131,14 @@ Full reference → [Wiki: Configuration](wiki/Configuration.md)
 
 ## Links
 
-- [Wiki](wiki/Home.md)
-- [Bug Report](../../issues)
-- [Discord](discord 링크)
-- [Developer API](wiki/Developer-API.md)
+- [Wiki](https://github.com/Perdume/AlchemistCraft/wiki)
+- [Bug Report](https://github.com/Perdume/AlchemistCraft/issues)
+- [Developer API](https://github.com/Perdume/AlchemistCraft/wiki/Developer-API)
 
 ---
 
 ## Supported Versions
 
-- Minecraft: 1.13 – 1.21+
-- Java: 17+
-- Server: Spigot / Paper / Purpur
+- Minecraft: 1.21+
+- Java: 21+
+- Server: Paper / Purpur / Spigot
