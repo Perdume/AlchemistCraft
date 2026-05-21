@@ -1,168 +1,148 @@
 # AlchemistCraft
 
-> **Powerful Custom Recipe Plugin for Minecraft 1.13 – 26.1.2+**
-
-AlchemistCraft gives you complete control over your server's crafting system.
-Add, remove, and manage custom recipes through an intuitive in-game GUI or commands — with full support for Spigot, Paper, and Purpur.
+**Advanced Custom Recipe Plugin for Minecraft 1.13 – 1.21+**  
+Spigot · Paper · Purpur
 
 ---
 
-## ✨ Features
+## What is AlchemistCraft?
 
-### 🆓 Free
-- Unlimited custom shaped & shapeless recipes
-- Remove & restore vanilla recipes
-- Furnace, Blast Furnace, Smoker, Campfire recipe support
-- In-game GUI Recipe Editor
-- Recipe Book integration
-- Import & Export recipes (.json)
-- SQLite, JSON, MySQL storage support
-- Full config customization
-- PlaceholderAPI & Vault integration (optional)
-- EXP cost recipes
-- Recipe categories & tags
-- Third-party item recognition (ItemsAdder, MMOItems, Oraxen)
-- 14 language support
-- Update notifications
-
-### 👑 Premium
-- Custom item metadata support (enchants, lore, custom name)
-- Conditional recipes (permission / world / time)
-- Per-player recipe cooldown & craft limit
-- Random chance results
-- Recipe discovery & unlock system
-- Custom sounds & particles on craft
-- Usage statistics & logs
-- Discord Webhook integration
-- Web dashboard
-- Advanced third-party plugin integration (ItemsAdder, MMOItems, Oraxen, MythicMobs)
-- Recipe visibility (group-based)
+AlchemistCraft is a premium-grade recipe management plugin that lets server administrators create, edit, and control every recipe — entirely through an in-game GUI, no config editing required.
 
 ---
 
-## 📥 Downloads
+## Features
 
-| Edition | Link |
+### Recipe Types
+| Type | Station |
 |---|---|
-| 🆓 Free | [GitHub Releases](../../releases/latest) |
-| 👑 Premium | [Polymart](링크) · [BuiltByBit](링크) |
+| Crafting Table (Shaped) | Crafting Table |
+| Crafting Table (Shapeless) | Crafting Table |
+| Furnace | Furnace |
+| Blast Furnace | Blast Furnace |
+| Smoker | Smoker |
+| Campfire | Campfire |
+| Stonecutter | Stonecutter |
+| Smithing | Smithing Table |
 
----
+### Ingredient Matching
+- **Material** — any item of that material type
+- **NBT / PDC** — exact ItemStack match including metadata, enchantments, custom model data, PersistentDataContainer
+- **ItemsAdder** — match by `namespace:id`
+- **MMOItems** — match by `TYPE:ID`
+- **Oraxen** — match by item id
 
-## 🔧 Requirements
+### Economy & Access Control
+- **EXP cost** — require experience levels per craft (per-recipe, configurable)
+- **Vault cost** — require currency per craft (per-recipe, configurable)
+- **Craft permission** — restrict individual recipes to any permission node
 
-| Item | Requirement |
+### Storage Backends
+| Backend | Use Case |
 |---|---|
-| Minecraft | 1.13 – 26.1.2+ |
-| Java | 17 or higher (25+ for 26.1+) |
-| Server | Spigot / Paper / Purpur |
+| SQLite | Default — zero setup, single server |
+| JSON | Human-readable flat files |
+| MySQL | Shared storage across multiple servers |
 
-### Optional Dependencies
-- [Vault](https://www.spigotmc.org/resources/vault.34315/)
-- [PlaceholderAPI](https://www.spigotmc.org/resources/placeholderapi.6245/)
-- [ItemsAdder](https://www.spigotmc.org/resources/itemsadder.73355/)
-- [MMOItems](https://www.spigotmc.org/resources/mmoitems-premium.39267/)
-- [Oraxen](https://www.spigotmc.org/resources/oraxen.72448/)
-
----
-
-## 🚀 Quick Start
-
-1. Download `AlchemistCraft-free-x.x.x.jar` from [Releases](../../releases/latest)
-2. Place the jar in your server's `/plugins` folder
-3. Restart your server
-4. Edit `plugins/AlchemistCraft/config.yml` as needed
-5. Use `/ac reload` to apply changes without restarting
-
----
-
-## 💬 Commands
-
-| Command | Description |
+### Plugin Compatibility
+| Plugin | Support |
 |---|---|
-| `/ac recipe add <name>` | Add a new recipe (opens GUI) |
-| `/ac recipe remove <name>` | Remove a custom or vanilla recipe |
-| `/ac recipe list` | Browse all recipes |
-| `/ac recipe info <name>` | Show recipe details |
-| `/ac recipe enable/disable <name>` | Toggle a recipe |
-| `/ac import <file>` | Import recipes from .json |
-| `/ac export <file>` | Export recipes to .json |
-| `/ac reload` | Reload the plugin |
-| `/ac help` | Show help |
+| Vault | Economy integration (craft costs) |
+| PlaceholderAPI | Placeholder expansion |
+| ItemsAdder | Custom item ingredients & results |
+| MMOItems | Custom item ingredients & results |
+| Oraxen | Custom item ingredients & results |
 
-Full command reference → [Wiki: Commands](../../wiki/Commands)
+### Other Highlights
+- Full **in-game GUI editor** — create and edit recipes without touching any files
+- **Vanilla recipe control** — toggle any vanilla recipe on/off per-server
+- **Custom cook time & XP** — configure per-recipe for all furnace-type stations
+- **Import / Export** — share recipe packs as JSON files
+- **14 languages** — en, ko, ja, zh_CN, zh_TW, de, fr, es, pt_BR, ru, pl, nl, tr, vi
+- **Developer API** — programmatically add/remove/toggle recipes from other plugins
+- **Event API** — `RecipeAddEvent`, `RecipeRemoveEvent`, `RecipeToggleEvent`, `VanillaRecipeToggleEvent`
+- **Internal diagnostics** — `/ac test` for live plugin health checks
 
 ---
 
-## 🔑 Permissions
+## Quick Start
 
-| Permission | Description | Default |
+1. Drop `AlchemistCraft.jar` into your `plugins/` folder
+2. Restart the server
+3. Run `/ac` in-game to open the recipe list GUI
+4. Click the **+** (Emerald) button to create a new recipe
+5. Set ingredients, result item, and recipe type — then click **Save**
+
+---
+
+## Commands
+
+| Command | Description | Permission |
 |---|---|---|
-| `alchemistcraft.admin` | Full access | OP |
-| `alchemistcraft.recipe.add` | Add & edit recipes | OP |
-| `alchemistcraft.recipe.remove` | Remove recipes | OP |
-| `alchemistcraft.recipe.list` | View recipe list | Everyone |
-| `alchemistcraft.gui.view` | Open recipe view GUI | Everyone |
-| `alchemistcraft.gui.edit` | Open recipe editor GUI | OP |
-| `alchemistcraft.import` | Import recipes | OP |
-| `alchemistcraft.export` | Export recipes | OP |
-| `alchemistcraft.reload` | Reload plugin | OP |
-
-Full permission reference → [Wiki: Permissions](../../wiki/Permissions)
-
----
-
-## 🌐 Language Support
-
-AlchemistCraft supports **14 languages** out of the box.
-Set your language in `config.yml`:
-
-```yaml
-language: en  # en, ko, ja, zh_CN, zh_TW, de, fr, es, pt_BR, ru, pl, nl, tr, vi
-```
+| `/ac` | Open recipe list GUI | `alchemistcraft.gui.view` |
+| `/ac recipe add <name>` | Create a new recipe | `alchemistcraft.recipe.add` |
+| `/ac recipe remove <name>` | Delete a recipe | `alchemistcraft.recipe.remove` |
+| `/ac recipe list [page]` | List all recipes | `alchemistcraft.recipe.list` |
+| `/ac recipe info <name>` | Show recipe details | `alchemistcraft.recipe.list` |
+| `/ac recipe enable <name>` | Enable a recipe | `alchemistcraft.recipe.add` |
+| `/ac recipe disable <name>` | Disable a recipe | `alchemistcraft.recipe.add` |
+| `/ac import <file>` | Import recipes from JSON | `alchemistcraft.import` |
+| `/ac export <file>` | Export recipes to JSON | `alchemistcraft.export` |
+| `/ac reload` | Reload all plugin data | `alchemistcraft.reload` |
+| `/ac debug` | Toggle debug mode | `alchemistcraft.debug` |
+| `/ac test [category]` | Run internal diagnostics | `alchemistcraft.test` |
 
 ---
 
-## 🗄️ Storage Options
-
-Configure your preferred storage in `config.yml`:
+## Configuration (excerpt)
 
 ```yaml
+language: en          # en, ko, ja, zh_CN, zh_TW, de, fr, es, pt_BR, ru, pl, nl, tr, vi
+
 storage:
-  type: SQLITE  # SQLITE / JSON / MYSQL
+  type: SQLITE        # SQLITE / JSON / MYSQL
+
+features:
+  vault-integration: true
+  exp-cost: true
+  craft-permission: true
+
+recipe-defaults:
+  furnace:
+    cook-time: 200    # ticks (200 = 10s)
+    cook-xp: 0.1
 ```
 
-| Type | Description |
+Full reference → [Wiki: Configuration](wiki/Configuration.md)
+
+---
+
+## Requirements
+
+- Java 17 or higher
+- Spigot / Paper / Purpur 1.13+
+
+---
+
+## Downloads
+
+| Version | Link |
 |---|---|
-| SQLite | Default. No setup required. |
-| JSON | File-based. Simple and lightweight. |
-| MySQL | External database. Recommended for large servers. |
+| Latest | [Polymart](링크) / [BuiltByBit](링크) |
 
 ---
 
-## ❌ Error Codes
+## Links
 
-If an error occurs, AlchemistCraft will display a code like `ERROR_5` or `UNKNOWN-7A3F2B`.
-
-- Known errors (`ERROR_1` ~ `ERROR_14`) → [Wiki: Error Codes](../../wiki/Error-Codes)
-- Unknown errors (`UNKNOWN-XXXXXX`) → Please [open an issue](../../issues) with the code
-
----
-
-## 🔗 Links
-
-| | |
-|---|---|
-| 📖 Wiki | [GitHub Wiki](../../wiki) |
-| 🐛 Bug Report | [GitHub Issues](../../issues) |
-| 💬 Discord | [링크 추후 추가] |
-| 🛒 SpigotMC | [링크 추후 추가] |
-| 👑 Polymart | [링크 추후 추가] |
-| 👑 BuiltByBit | [링크 추후 추가] |
+- [Wiki](wiki/Home.md)
+- [Bug Report](../../issues)
+- [Discord](discord 링크)
+- [Developer API](wiki/Developer-API.md)
 
 ---
 
-## 📄 License
+## Supported Versions
 
-AlchemistCraft Free is provided as-is for use on your Minecraft server.
-Redistribution or modification of the plugin files is not permitted.
+- Minecraft: 1.13 – 1.21+
+- Java: 17+
+- Server: Spigot / Paper / Purpur
